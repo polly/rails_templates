@@ -17,6 +17,7 @@ git :add => ".", :commit => "-m 'initial commit'"
 
 generate :controller, "welcome"
 route "map.root :controller => 'welcome'"
+
 git :rm => "public/index.html"
 
 git :add => ".", :commit => "-m 'adding welcome controller'"
