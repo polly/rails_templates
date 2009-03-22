@@ -1,5 +1,5 @@
-# load_template "http://github.com/stjernstrom/rails_templates/raw/master/basic_template.rb"
-load_template "/Users/mathias/Documents/Dev/Public/rails_templates/basic_template.rb"
+load_template "http://github.com/stjernstrom/rails_templates/raw/master/basic_template.rb"
+# load_template "/Users/mathias/Documents/Dev/Public/rails_templates/basic_template.rb"
 
 gem "nifty-generators"
 
