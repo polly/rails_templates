@@ -15,3 +15,5 @@ function railsapp {
   fi  
 }
 
+# http://m.onkey.org/2008/12/4/rails-templates
+
