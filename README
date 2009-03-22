@@ -1,11 +1,17 @@
 My rails templates
 
-Stolen bash function for creating new rails apps. (Ryan Bates: http://railscasts.com/episodes/148-app-templates-in-rails-2-3)
+bash function for creating new rails apps. (Originating from Ryan Bates: http://railscasts.com/episodes/148-app-templates-in-rails-2-3)
 
-function railsapp {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/stjernstrom/rails_templates/raw/master/$template.rb $@
+function railsapp {  
+  if [ -z "$1" ] || [ -z "$2" ]
+  then
+    echo "Usage:"
+    echo "   railsapp <template name> <application name>"
+  else
+    template=$1
+    appname=$2
+    shift 2
+    rails $appname -m http://github.com/stjernstrom/rails_templates/raw/master/$template.rb $@
+  fi  
 }
 
