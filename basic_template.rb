@@ -13,10 +13,10 @@ END
 
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
+run "rm public/index.html"
 
 generate :controller, "welcome"
 route "map.root :controller => 'welcome'"
 
-git :rm => "public/index.html"
-
-git :add => ".", :commit => "-m 'initial commit'"
+git :add => "."
+git :commit => "-m 'initial commit'"
