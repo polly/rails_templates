@@ -8,7 +8,7 @@ if yes?("Setup will_paginate?")
   gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
 end
 
-if yes("Setup haml?")
+if yes?("Setup haml?")
   gem 'haml', :lib => 'haml'
   
   # This saves us from having to run the haml --rails command
