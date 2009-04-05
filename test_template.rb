@@ -1,5 +1,3 @@
-load_template "http://github.com/stjernstrom/rails_templates/raw/master/basic_template.rb"
-
 gem 'thoughtbot-shoulda', :lib => false
 gem "webrat",             :lib => false
 gem "cucumber",           :lib => false
