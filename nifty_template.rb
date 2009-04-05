@@ -18,6 +18,3 @@ file 'app/views/welcome/index.html.erb', <<-CODE
 <% title "Welcome!" %>
 <p>Hello and welcome!</p>
 CODE
-
-git :add => "."
-git :commit => "-m 'niftyfied project with nifty_template'"

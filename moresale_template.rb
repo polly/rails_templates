@@ -4,33 +4,13 @@ run "echo TODO > README"
 
 # Setup and install any gems we want to use
 
-if yes?("Setup will_paginate?")
+if yes?("Setup will_paginate? (yes/no)")
   gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
 end
 
-if yes?("Setup haml?")
-  gem 'haml', :lib => 'haml'
-  
-  # This saves us from having to run the haml --rails command
-  file 'vendor/plugins/haml/init.rb', <<-END
-require 'rubygems'
-begin
-  require File.join(File.dirname(__FILE__), 'lib', 'haml') # From here
-rescue LoadError
-  require 'haml' # From gem
-end
-
-# Load Haml and Sass
-Haml.init_rails(binding)
-END
-end
-
-rake "gems:unpack"
-
-
 # Setup and use any plugins we want to use
 
-if yes?("Would you like to use the Hoptoad notifier plugin?")
+if yes?("Would you like to use the Hoptoad notifier plugin? (yes/no)")
   plugin 'hoptoad_notifier', :git => 'git://github.com/thoughtbot/hoptoad_notifier.git'  
   hoptoad_api_key = ask('What is your Hoptoad API key?')
 
@@ -43,11 +23,11 @@ end
 END
 end
 
-if yes?("Niftify?")
+if yes?("Niftify? (yes/no)")
   load_template "http://github.com/polly/rails_templates/raw/master/nifty_template.rb"
 end
 
-if yes?("Setup cucumber and shoulda?")
+if yes?("Setup cucumber and shoulda? (yes/no)")
   load_template "http://github.com/polly/rails_templates/raw/master/test_template.rb"
 end
 
