@@ -2,15 +2,36 @@ gem 'nifty-generators', :lib => 'nifty_generators', :source => 'http://gems.gith
 
 run "sudo rake gems:install"
 
-if yes?("Generate nifty layout?")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Generate nifty layout? ( yes / no )       |
+  |                                           |
+  +-------------------------------------------+
+END
   generate :nifty_layout
 end
 
-if yes?("Generate nifty config?")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Generate nifty config? ( yes / no )       |
+  |                                           |
+  +-------------------------------------------+
+END
   generate :nifty_config
 end
 
-if yes?("Generate nifty authentication?")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Generate nifty_auth? ( yes / no )         |
+  |                                           |
+  +-------------------------------------------+
+END
   generate :nifty_authentication
 end
 

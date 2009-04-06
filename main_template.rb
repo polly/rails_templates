@@ -1,21 +1,56 @@
 load_template "http://github.com/polly/rails_templates/raw/master/templates/base_template.rb"
 
-if yes?("Setup will paginate? (yes/no)")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Setup Will Paginate? ( yes / no )         |
+  |                                           |
+  +-------------------------------------------+
+END
   load_template "http://github.com/polly/rails_templates/raw/master/templates/will_paginate_template.rb"
 end
 
-if yes?("Setup Hoptoad? (yes/no)")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Setup Hoptoad? ( yes / no )               |
+  |                                           |
+  +-------------------------------------------+
+END
   load_template "http://github.com/polly/rails_templates/raw/master/templates/hoptoad_template.rb"
 end
 
-if yes?("Niftify? (yes/no)")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Niftify? ( yes / no )                     |
+  |                                           |
+  +-------------------------------------------+
+END
   load_template "http://github.com/polly/rails_templates/raw/master/templates/nifty_template.rb"
 end
 
-if yes?("Setup cucumber and shoulda? (yes/no)")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Setup cucumber and shoulda? ( yes / no )  |
+  |                                           |
+  +-------------------------------------------+
+END
   load_template "http://github.com/polly/rails_templates/raw/master/templates/test_template.rb"
 end
 
-if yes?("Setup our FormBuilder? (yes/no)")
+if yes? <<-END
+  
+  +-------------------------------------------+
+  |                                           |
+  | Generate LabeledFormBuilder? ( yes / no ) |
+  |                                           |
+  +-------------------------------------------+
+END
   load_template "http://github.com/polly/rails_templates/raw/master/templates/form_builder_template.rb"
 end
