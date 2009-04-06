@@ -48,3 +48,8 @@ gsub_file "app/helpers/application_helper.rb", /(module ApplicationHelper.*)/, <
     form_for(*(args + [options]), &block)
   end
 END
+
+puts "+-------------------------------------------------------+"
+puts "| Usage:                                                |"
+puts "|   Use labeled_form_for instead of form_for            |"
+puts "+-------------------------------------------------------+"
