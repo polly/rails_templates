@@ -19,3 +19,7 @@ end
 if yes?("Setup our FormBuilder? (yes/no)")
   load_template "http://github.com/polly/rails_templates/raw/master/templates/form_builder_template.rb"
 end
+
+if yes?("Unpack gems?")
+  rake "gems:unpack"
+end

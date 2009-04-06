@@ -1,20 +1,32 @@
-#gem "nifty-generators"
+gem  "nifty-generators"
 
-generate :nifty_layout
-generate :nifty_config
+run  "sudo rake:gems:install"
 
-file 'app/controllers/welcome_controller.rb', <<-CODE
-class WelcomeController < ApplicationController
-  
-  layout "application"
-  
-  def index
-  end
-  
+if yes?("Generate nifty layout?")
+  generate :nifty_layout
 end
-CODE
 
-file 'app/views/welcome/index.html.erb', <<-CODE
-<% title "Welcome!" %>
-<p>Hello and welcome!</p>
-CODE
+if yes?("Generate nifty config?")
+  generate :nifty_config
+end
+
+if yes?("Generate nifty authentication?")
+  generate :nifty_authentication
+end
+
+
+# file 'app/controllers/welcome_controller.rb', <<-CODE
+# class WelcomeController < ApplicationController
+#   
+#   layout "application"
+#   
+#   def index
+#   end
+#   
+# end
+# CODE
+# 
+# file 'app/views/welcome/index.html.erb', <<-CODE
+# <% title "Welcome!" %>
+# <p>Hello and welcome!</p>
+# CODE
