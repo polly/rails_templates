@@ -51,7 +51,57 @@ END
 
 gsub_file "config/environment.rb", /# Add additional load paths for your own custom dirs/, 'config.load_paths += %W( \#{RAILS_ROOT}/app/form_builders )'
 
-puts "+-------------------------------------------------------+"
-puts "| Usage:                                                |"
-puts "|   Use labeled_form_for instead of form_for            |"
-puts "+-------------------------------------------------------+"
+puts "+-----------------------------------------------------------------------------+"
+puts "| Usage:                                                                      |"
+puts "|                                                                             |"
+puts "|   <% form_for @user do |f| %>                                               |"
+puts "|     <%= f.error_messages %>                                                 |"
+puts "|     <p>                                                                     |"
+puts "|       <%= f.label :username %><br />                                        |"
+puts "|       <%= f.text_field :username %>                                         |"
+puts "|     </p>                                                                    |"
+puts "|     <p>                                                                     |"
+puts "|       <%= f.label :password %><br />                                        |"
+puts "|       <%= f.password_field :password %>                                     |"
+puts "|     </p>                                                                    |"
+puts "|     <p>                                                                     |"
+puts "|       <%= f.label :password_confirmation, 'Confirm Password' %><br />       |"
+puts "|       <%= f.password_field :password_confirmation %>                        |"
+puts "|     </p>                                                                    |"
+puts "|     <p><%= f.submit 'Sign up' %></p>                                        |"
+puts "|   <% end %>                                                                 |"
+puts "|                                                                             |"
+puts "|   Becomes:                                                                  |"
+puts "|                                                                             |"
+puts "|   <% labeled_form_for @user do |f| %>                                       |"
+puts "|     <%= f.error_messages %>                                                 |"
+puts "|                                                                             |"
+puts "|     <%= f.text_field :username, :label => 'Username:' %>                    |"
+puts "|     <%= f.password_field :password, :label => 'Password:' %>                |"
+puts "|     <%= f.password_field :password_confirmation, :label => 'Password:' %>   |"
+puts "|                                                                             |"
+puts "|   	<%= f.submit 'Sign up' %>                                               |"
+puts "|   <% end %>                                                                 |"
+puts "+-----------------------------------------------------------------------------+"
+
+
+<% form_for @user do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email, "Email Address" %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Confirm Password" %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p><%= f.submit "Sign up" %></p>
+<% end %>
