@@ -1,6 +1,6 @@
-gem  "nifty-generators"
+gem 'nifty-generators', :lib => 'nifty_generators', :source => 'http://gems.github.com'
 
-run  "sudo rake gems:install"
+run "sudo rake gems:install"
 
 if yes?("Generate nifty layout?")
   generate :nifty_layout
