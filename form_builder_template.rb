@@ -42,9 +42,8 @@ end
 END
 
 gsub_file "app/helpers/application_helper.rb", /(module ApplicationHelper.*)/, <<-END
-\\1\n
-def labeled_form_for(args*, &block)
-  options = args.extract_options!.merge(:builder => LabeledFormBuilder)
-  form_for(*(args + [options]), &block)
-end
-END
+\\1
+  def labeled_form_for(args*, &block)
+    options = args.extract_options!.merge(:builder => LabeledFormBuilder)
+    form_for(*(args + [options]), &block)
+  endEND
