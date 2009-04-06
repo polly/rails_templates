@@ -49,6 +49,8 @@ gsub_file "app/helpers/application_helper.rb", /(module ApplicationHelper.*)/, <
   end
 END
 
+gsub_file "config/environment.rb", /# Add additional load paths for your own custom dirs/, 'config.load_paths += %W( \#{RAILS_ROOT}/app/form_builders )'
+
 puts "+-------------------------------------------------------+"
 puts "| Usage:                                                |"
 puts "|   Use labeled_form_for instead of form_for            |"
