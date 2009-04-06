@@ -2,7 +2,7 @@ gem 'thoughtbot-shoulda', :lib => false
 gem "webrat",             :lib => false
 gem "cucumber",           :lib => false
 
-run  "sudo rake:gems:install RAILS_ENV=test"
+run  "sudo rake gems:install RAILS_ENV=test"
 
 generate :cucumber
 
