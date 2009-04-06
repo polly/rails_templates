@@ -1,6 +1,6 @@
 file "app/form_builders/labeled_form_builder.rb", <<-END
 class LabeledFormBuilder < ActionView::Helpers::FormBuilder
-  %w[text_field text_area collection_select file_field].each do |method_name|
+  %w[text_field text_area collection_select file_field password_field].each do |method_name|
     define_method(method_name) do |field_name, *args|
       @template.content_tag(:p, field_label(field_name, *args) + "<br />" + super)
     end
