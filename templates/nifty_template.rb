@@ -42,6 +42,7 @@ END
 require 'ostruct'
 require 'yaml'
 
+raw_config = File.read(RAILS_ROOT + "/config/app_config.yml")
 config = OpenStruct.new(YAML.load(raw_config))
 ::AppConfig = OpenStruct.new(config.send(RAILS_ENV))
 END
