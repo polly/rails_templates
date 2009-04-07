@@ -22,6 +22,30 @@ if yes? <<-END
   +-------------------------------------------+
 END
   generate :nifty_config
+  
+  if yes? <<-END
+
+    +--------------------------------------------+
+    |                                            |
+    | Prettify nifty config access? ( yes / no ) |
+    |                                            |
+    |   For example:                             |
+    |                                            |
+    |     AppConfig.domain                       |
+    |                                            |
+    |   Instead of the default:                  |
+    |                                            |
+    |     APP_CONFIG[:domain]                    |
+    +--------------------------------------------+
+END
+    file "config/initializers/load_app_config.rb", <<-END
+require 'ostruct'
+require 'yaml'
+
+config = OpenStruct.new(YAML.load(raw_config))
+::AppConfig = OpenStruct.new(config.send(RAILS_ENV))
+END
+  end
 end
 
 if yes? <<-END
