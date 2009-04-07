@@ -1,4 +1,4 @@
-gem 'nifty-generators', :lib => 'nifty_generators', :source => 'http://gems.github.com'
+gem 'nifty-generators', :lib => 'nifty_generators'
 
 run "sudo rake gems:install"
 
